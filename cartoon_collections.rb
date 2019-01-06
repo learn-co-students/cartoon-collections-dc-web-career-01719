@@ -1,3 +1,4 @@
+require 'pry'
 def roll_call_dwarves(dwarf_list)
   dwarf_list.each_with_index {|name, index|
   puts "#{index+1}.#{name} \n"}
@@ -16,10 +17,7 @@ end
 
 def find_the_cheese(array)
   cheese_types = ["cheddar", "gouda", "camembert"]
-  cheese = array & cheese_types 
-if cheese.length > 0
-  cheese.join
-else 
-  nil
-end
-end
+  array.find {|item|
+  cheese_types.include?(item)
+  }
+  end
